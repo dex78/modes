@@ -42,19 +42,17 @@ trait AddressParityReply {
 
 trait Reply extends DownlinkFormat with FlightStatusReply with DownlinkRequestReply with UtilityMessageReply with AddressParityReply
 
-case class RawAltitude(altitude: Int)
+case class RawAltitude(altitude: Short)
 trait RawAltitudeReply {
   def rawAltitude: RawAltitude
 }
 
-case class RawModeA(modeA: Int)
+case class RawModeA(modeA: Short)
 trait RawModeAReply {
   def rawModeA: RawModeA
 }
 
-abstract class BDSData {
-
-}
+trait BDSData
 case class BDSMBData() extends BDSData
 case class BDSMVData() extends BDSData
 case class BDSMEData() extends BDSData
